@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show</title>
+    <style>
+        .buttonGreen {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 6px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+        }
+
+        .buttonRed {
+            background-color: #f44336;
+            border: none;
+            color: white;
+            padding: 6px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <td><label for="id"><b>ID</b></label></td>
+        <td><span th:text="${user.getId()}" id="id"> Id </span></td>
+    </tr>
+    <tr>
+        <td><label for="name"><b>Имя</b></label></td>
+        <td><span th:text="${user.getName()}" id="name"> Name </span></td>
+    </tr>
+    <tr>
+        <td><label for="age"><b>Возраст</b></label></td>
+        <td><span th:text="${user.getAge()}" id="age"> Age </span></td>
+    </tr>
+    <tr>
+        <td><label for="city"><b>Город</b></label></td>
+        <td><span th:text="${user.getCity()}" id="city"> City </span></td>
+    </tr>
+    <tr>
+        <td><label for="Email"><b>Email</b></label></td>
+        <td><span th:text="${user.getEmail()}" id="Email"> Mail </span></td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td>
+            <a class="buttonGreen" th:href="@{/users/{id}/edit(id=${user.getId()})}"> Изменить </a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <form th:method="delete" th:action="@{/users/{id}(id=${user.getId()})}">
+                <input class="buttonRed" type="submit" value="Удалить"/>
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="button" onclick="history.back();" value="Назад">
+        </td>
+    </tr>
+</table>
+</body>
+</html>
