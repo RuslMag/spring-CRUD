@@ -14,8 +14,11 @@ import javax.validation.Valid;
 @RequestMapping("/users")
 public class UsersController {
 
+    private final UserService userService;
     @Autowired
-    private UserService userService;
+    public UsersController(UserService userService) {
+        this.userService = userService;
+    }
 
     @GetMapping
     public String listUsers(Model model) {
@@ -36,7 +39,7 @@ public class UsersController {
     }
 
     @PostMapping()
-    public String create(@Valid User user, BindingResult bindingResult) {
+    public String create(@ModelAttribute("user")@Valid User user, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
             return "users/new";

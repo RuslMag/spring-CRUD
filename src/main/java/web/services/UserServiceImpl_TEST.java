@@ -17,7 +17,7 @@ public class UserServiceImpl_TEST implements UserService {
 
         userList.add(new User(++USER_COUNT, "Владимир", 30, "Москва", "vladimir@mail.ru"));
         userList.add(new User(++USER_COUNT, "Алексей", 19, "Казань", "aleksei@mail.ru"));
-        userList.add(new User(++USER_COUNT, "Анна", 22, "Уфа", "anna@mail.ru"));
+        userList.add(new User(++USER_COUNT, "Анна", 22, "Питер", "anna@mail.ru"));
         userList.add(new User(++USER_COUNT, "Тимур", 26, "Волгоград", "timur@mail.ru"));
         userList.add(new User(++USER_COUNT, "Виктория", 33, "Сочи", "vika@mail.ru"));
     }

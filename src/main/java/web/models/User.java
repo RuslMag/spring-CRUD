@@ -16,23 +16,23 @@ public class User {
     @NotNull
     @NotEmpty(message = "Поле 'Имя' не должно быть пустым!")
     @Size(min = 3, max = 30, message = "Имя должно быть от 3 до 30 символов!")
-    @Column(name = "name", nullable = false)
+    @Column(name = "name")
     private String name;
 
     @NotNull
-    @Min(value = 18, message = "Age should not be less than 18")
-    @Max(value = 150, message = "Age should not be greater than 150")
-    @Column(name = "age", nullable = false, length = 3)
+    @Min(value = 18, message = "Возраст от 18 лет")
+    @Max(value = 150, message = "Возраст до 150 лет")
+    @Column(name = "age", length = 3)
     private int age;
 
     @NotNull
-    @Column(name = "city", nullable = false)
+    @Column(name = "city")
     @NotEmpty(message = "Поле 'Город' не должно быть пустым!")
     @Size(min = 2, max = 30, message = "Введите название города правильно!")
     private String city;
 
     @NotNull
-    @Column(name = "email", nullable = false)
+    @Column(name = "email")
     @NotEmpty(message = "Поле 'Email' не должно быть пустым!")
     @Email(message = "Введите правильный Email!")
     private String email;
